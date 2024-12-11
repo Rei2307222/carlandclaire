@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl & Claire</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/parfumestyle.css">
+    <link rel="icon" href="/media/1.png"> 
+</head>
+
+<body>
+<header>
+    <div class="announcement-bar">
+      FREE SHIPPING ON ORDER OVER RP. 450,000
+  </div>
+    <nav class="nav">
+      <div class="nav-container">
+          <div class="logo">
+              <img src="/media/2.png" alt="Carl & Claire Logo">
+          </div>
+          
+          <ul class="nav-menu">
+              <li><a href="discover.html">Discover</a></li>
+              <li class="dropdown">
+                  <button class="dropdown-btn">
+                      Shop
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                  </button>
+                  <div class="dropdown-menu">
+                      <a href="ShopAll.html">Shop All</a>
+                      <a href="perfume.html">Perfume</a>
+                      <a href="discoverySet.html">Discovery Set</a>
+                  </div>
+              </li>
+              <li><a href="discover.html">Our Story</a></li>
+              <li><a href="stockist.html">Stockist</a></li>
+          </ul>
+  
+          <div class="nav-right">
+              <div class="search-container">
+                  <input type="text" class="search-input" placeholder="SEARCH">
+                  <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  </svg>
+              </div>
+              <div class="search-container">
+                  <a href="cart.html" class="cart-link">
+                      <i class="fas fa-shopping-cart"></i>
+                  </a>
+              </div>
+              <div class="search-container">
+              <a href="#" class="profile-link">
+                  <i class="fas fa-user-alt"></i>
+              </a>
+              </div>
+          </div>
+      </div>
+  </nav>
+</header>
+
+<div class="cart-popup">
+    <div class="cart-popup-header">
+      <h2>CART (1 Item)</h2>
+      <button class="cart-popup-close">✕</button>
+    </div>
+    <div class="cart-popup-content">
+      <div class="cart-item">
+        <img class="cart-item-image" id="cart-product-image" src="" alt="">
+        <div class="cart-item-details">
+          <h3 class="cart-item-title" id="cart-product-name"></h3>
+          <p class="cart-item-price" id="cart-product-price"></p>
+          <div class="quantity-controls">
+            <button onclick="updateCartQuantity(-1)">-</button>
+            <span id="cart-quantity">1</span>
+            <button onclick="updateCartQuantity(1)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="cart-subtotal">
+        <div class="cart-subtotal-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal"></span>
+        </div>
+        <p style="font-size: 12px; color: #666;">Taxes and shipping are calculated at checkout.</p>
+        <div class="cart-popup-buttons">
+          <a href="Checkout.html" class="checkout">Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<main>
+  <!-- Konten Produk -->
+  <div class="product-container">
+    <!-- Gambar Produk -->
+    <div class="product-image">
+      <a href="shop.html" class="breadcrumb">← All Product / A Love Like This EDP</a>
+      <img id="main-image" src="/media/DE1.webp" alt="Garden of Eden EDP">
+
+    </div>
+
+    <div class="product-details">
+      <h1>Delicate Embrace EDP</h1>
+      <p class="sku">Fregrantly Floral</p>
+      <p class="price">Rp. 279.000</p>
+      <div class="quantity">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" value="1" min="1">
+      </div>
+      <div class="buttons">
+        <button class="add-to-cart">ADD TO CART</button>
+        <a href="/html/Checkout.html" class="buy-now">BUY NOW</a>
+      </div>
+      <div class="size">
+        <span>Size</span>
+        <div class="size-value">30 ML</div>
+      </div>
+      <div class="thumbnail-images">
+        <img src="/media/DE1.webp" alt="DE1" onclick="changeImage('/media/DE1.webp')">
+        <img src="/media/DE2.webp" alt="DE2" onclick="changeImage('/media/DE2.webp')">
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <p>“𝙉𝙤𝙩𝙝𝙞𝙣𝙜 𝙘𝙖𝙡𝙢𝙨 𝙢𝙮 𝙝𝙚𝙖𝙧𝙩 𝙢𝙤𝙧𝙚 𝙩𝙝𝙖𝙣 𝙮𝙤𝙪𝙧 𝙙𝙚𝙡𝙞𝙘𝙖𝙩𝙚 𝙚𝙢𝙗𝙧𝙖𝙘𝙚.”
+        Sensual like the inside of a flower, Delicate Embrace opens with the alluring scents of Freesia, Citrus, and Pear. 
+        <br>Like the familiar embrace that gently arouses you from sleep, notes of Lily of the Valley, Rose, and Musk illustrate warmth and intimacy.
+        
+    </p>
+    <ul class="features">
+      <li>
+        Feature
+        <ul>
+          <li> Top Notes : Citrus | Freesia | Fruity | Pear </li>
+          <li> Middle Notes : Lily of The Valley | Rose
+          <li> Base Notes : Ambery | Musky</li>
+        </ul>
+      </li>
+      <li>
+        <bold>Performance </bold>
+        <ul>
+          <li> Sillage : Medium</li>
+          <li> Projection : 5/5</li>
+          <li>Longevity : Up to 8-10 hours</li>
+        </ul>
+      </li>
+      <li>
+        Ingredients
+        <ul>
+          <li>Alcohol Denat (food-grade quality), Fragrance, Aqua, Propylene Glycol
+            <br>BPOM NA18220602509
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="recommendations">
+    <h2 style="text-align: center;">You Might Also Like</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="recommendation-card">
+            <a href="/html/tinggi2.html">
+              <img src="/media/tinggi2.jpg" alt="Rekomendasi 1">
+              <div class="recommendation-name">Sweetest Memoris Collection</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/ITW.html" class="recommendation-link">
+              <img src="/media/ITW 1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Into The Woods</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/TMH.html" class="recommendation-link">
+              <img src="/media/TMH 1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Take My Hand</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/MG.html" class="recommendation-link">
+              <img src="/media/MG1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Morning Glory</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/SOTY.html" class="recommendation-link">
+              <img src="/media/SOTY1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Song Of The Youth</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/TTTM.html" class="recommendation-link">
+              <img src="/media/TTTM1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Talking To The Moon</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/BD.html" class="recommendation-link">
+              <img src="/media/BD1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Black Dahlia</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/ALLT1.html" class="recommendation-link">
+              <img src="/media/ALLT1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">A Love Like This</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/SS.html" class="recommendation-link">
+              <img src="/media/SS1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Spring Sonata</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/media/GOE 1.webp" class="recommendation-link">
+              <img src="/media/GOE 1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Garden Of Eden</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/DWMS.html" class="recommendation-link">
+              <img src="/media/DWMS1.webp" alt="Rekomendasi 2">
+              <div class="recommendation-name">Dancing With My Shadow</div>
+            </a>
+          </div>
+          <div class="recommendation-card">
+            <a href="/html/tinggi1.html" class="recommendation-link">
+              <img src="/media/tinggi1.jpg" alt="Rekomendasi 2">
+              <div class="recommendation-name">Fresh Felling Collecition</div>
+            </a>
+          </div>
+        </div>
+</div>
+<button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+</div>
+</div>
+</main>
+<style>
+.recommendation-card {
+position: relative;
+width: 320px; 
+height: 320px; 
+}
+
+.recommendation-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.recommendation-name {
+position: absolute;
+bottom: 10px;
+left: 10px;
+color: #fffbfb;
+background-color: rgba(0, 0, 0, 0.8);
+padding: 4px 8px;
+border-radius: 4px;
+font-size: 14px;
+max-width: 100%; 
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.recommendation-link {
+display: block;
+width: 100%;
+height: 100%;
+text-decoration: none;
+}
+
+.carousel-track {
+display: flex;
+transition: transform 2s ease;
+gap: 20px;
+width: calc(100% * 3);
+padding-left: 27px;
+padding-right: 60px;
+}
+</style>
+
+<footer class="footer">
+  <div class="footer-logo">
+      <img src="/media/1.png" alt="CARL & CLAIRE">
+  </div>
+  
+  <div class="offers">
+      <h3>Enjoy Carl & Claire Exclusive Offers</h3>
+      <input type="email" class="email-input" placeholder="EMAIL">
+      <p class="subtext">Stay up-to-date with our latest news, updates and promotions</p>
+  </div>
+  
+  <div class="social-links">
+      <h3>Social Media</h3>
+      <div class="social-media-items">
+          <a href="#">Instagram</a>
+          <a href="#">Tiktok</a>
+          <a href="#">Youtube</a>
+      </div>
+  </div>
+  
+  <div class="return-policy">
+      <a href="#">Return Policy</a>
+  </div>
+</footer>
+
+
+<script>
+    function changeImage(src) {
+      const mainImage = document.getElementById('main-image');
+      mainImage.style.opacity = '0';
+      setTimeout(() => {
+        mainImage.src = src;
+        mainImage.style.opacity = '4';
+      }, 400);
+    }
+    const carouselTrack = document.querySelector('.carousel-track');
+    let currentIndex = 0;
+    const slidesToShow = 4;
+    const totalSlides = Math.ceil(carouselTrack.children.length / slidesToShow);
+
+    function moveCarousel(direction) {
+      currentIndex += direction;
+
+
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= totalSlides) currentIndex = totalSlides - 1;
+
+
+      const slideWidth = carouselTrack.querySelector('img').clientWidth + 20;
+      carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth * slidesToShow}px)`;
+    }
+
+  function addToCart(productName, productPrice, quantity) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.name === productName);
+    
+       if (existingProductIndex !== -1) {
+      cart[existingProductIndex].quantity += quantity;
+    } else {
+      cart.push({
+        name: productName,
+        price: productPrice,
+        quantity: quantity
+      });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(productName + ' has been added to the cart!');
+  }
+
+</script>
+<script src="/js/cart.js"></script>
+</body>
+</html>

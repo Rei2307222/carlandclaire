@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover - Carl & Claire</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/discoverstyle.css">
+  <link rel="icon" href="/media/1.png"> 
+</head>
+
+<body>
+  <header>
+    <div class="announcement-bar">
+      FREE SHIPPING ON ORDER OVER RP. 450,000
+  </div>
+  <nav class="nav">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="/media/2.png" alt="Carl & Claire Logo">
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="active"><a href="discover.html">Discover</a></li>
+            <li class="dropdown">
+                <button class="dropdown-btn">
+                    Shop
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="ShopAll.html">Shop All</a>
+                    <a href="perfume.html">Perfume</a>
+                    <a href="discoverySet.html">Discovery Set</a>
+                </div>
+            </li>
+            <li><a href="ourstory.html">Our Story</a></li>
+            <li><a href="stockist.html">Stockist</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="SEARCH">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+            <div class="search-container">
+                <a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+            <div class="search-container">
+            <a href="#" class="profile-link">
+                <i class="fas fa-user-alt"></i>
+            </a>
+            </div>
+        </div>
+    </div>
+</nav>
+  </header>
+
+  <main>
+    <div class="discover-content">
+      <h1 class="text-4xl font-bold mb-6">Welcome to Your Personalized Fragrance Journey</h1>
+      <p class="text-gray-600 mb-12">
+        Begin your aromatic adventure with Carl & Claire, where every step is designed to uncover the perfect scent that
+        reflects your personality and style. Explore fragrances crafted to resonate with your essence and tell your
+        story. Let’s embark on this journey to find the scent that truly defines you!
+      </p>
+
+
+      <a href="pertanyaan1.html" class="inline-block mt-12">
+        <button
+          class="btn-primary px-6 py-3 border-2 border-black bg-transparent text-black hover:bg-black hover:text-white transition duration-300">
+          Start question
+          <svg class="inline-block ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 10 10.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">
+        <img src="/media/1.png" alt="CARL & CLAIRE">
+    </div>
+    
+    <div class="offers">
+        <h3>Enjoy Carl & Claire Exclusive Offers</h3>
+        <input type="email" class="email-input" placeholder="EMAIL">
+        <p class="subtext">Stay up-to-date with our latest news, updates and promotions</p>
+    </div>
+    
+    <div class="social-links">
+        <h3>Social Media</h3>
+        <div class="social-media-items">
+            <a href="#">Instagram</a>
+            <a href="#">Tiktok</a>
+            <a href="#">Youtube</a>
+        </div>
+    </div>
+    
+    <div class="return-policy">
+        <a href="#">Return Policy</a>
+    </div>
+</footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Navigasi antar halaman
+      const navLinks = document.querySelectorAll('.navbar .nav-menu a:not(.search-wrapper)');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.location.href = this.getAttribute('href');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

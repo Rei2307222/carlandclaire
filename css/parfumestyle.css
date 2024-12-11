@@ -1,0 +1,1013 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Menambahkan box-sizing */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Announcement */
+.announcement-bar {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 300;
+} 
+
+/* Navbar */
+.nav {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  padding: 20px 50px;
+  background: #f4ede6;
+  border-bottom: 2px solid black;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 100px;
+  font-family: 'Cormorant Garamond', serif;
+  margin-right: 200px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px 0; 
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #f4ede6;
+  min-width: 220px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px; 
+  border-radius: 2px;
+  padding: 10px 0;
+  z-index: 1000; 
+}
+.dropdown::after {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  bottom: -20px;
+  left: 0;
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(255, 255, 255, 0.95);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  color: #333;
+  padding: 12px 25px;
+  display: block;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(0,0,0,0.02);
+  color: #000;
+  border-left: 2px solid #333;
+}
+
+.dropdown-btn:hover {
+  opacity: 0.8;
+}
+
+.dropdown-menu:hover {
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: 200px;
+}
+
+.search-container {
+  position: relative;
+  background: transparent;
+  color: black;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  color: black;
+  padding: 5px 30px 5px 5px;
+  width: 120px;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.search-input::placeholder {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.search-input:focus {
+  outline: none;
+  width: 180px;
+  border-bottom: 1px solid black;
+}
+
+.search-icon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: black;
+  opacity: 0.8;
+}
+
+.cart-link, .profile-link {
+  color: black;
+  padding: 8px 12px; /* Padding untuk tautan */
+  border-radius: 4px; /* Sudut membulat */
+  transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+
+.cart-link i, .profile-link i {
+  font-size: 24px; /* Ukuran ikon yang lebih besar */
+}
+
+.cart-link:hover, .profile-link:hover {
+  background-color: #e0e0e0; /* Warna latar belakang saat hover */
+  color: black; /* Ubah warna teks menjadi hitam saat hover */
+}
+
+.nav-menu li.active a {
+  position: relative;
+}
+
+.nav-menu li.active a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px; /* Tinggi garis */
+  background: #000; /* Warna garis */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Jarak garis dari teks */
+}
+
+/* Container Produk */
+.product-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 8rem;
+  flex-wrap: wrap;
+}
+
+/* Gambar Produk */
+.product-image {
+  flex: 0 0 45%;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: opacity 0.8s ease;
+}
+
+
+.breadcrumb {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Detail Produk */
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sku {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.quantity {
+  margin-bottom: 15px;
+}
+
+.quantity label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.quantity input {
+  width: 50px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Tombol */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+.add-to-cart {
+  background-color: #4f4f33;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+}
+
+.buy-now {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.size {
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.size-value {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Deskripsi dan Fitur Produk */
+.description {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-left: 90px;
+  margin-right: 120px;
+}
+
+.features {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.features li {
+  flex: 1;
+}
+
+.features li ul {
+  margin-top: 10px;
+  list-style: square;
+  padding-left: 20px;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 10px;
+}
+
+.carousel-track img {
+  width: calc(25% - 10px);
+  /* 4 gambar per slide */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  /* Tempatkan tombol di tengah vertikal */
+  transform: translateY(-50%);
+  /* Koreksi posisi untuk centering */
+  background: rgba(0, 0, 0, 0.5);
+  /* Warna latar tombol */
+  color: white;
+  /* Warna teks/icon tombol */
+  border: none;
+  /* Hapus border */
+  width: 40px;
+  /* Lebar lingkaran */
+  height: 40px;
+  /* Tinggi lingkaran sama dengan lebar */
+  cursor: pointer;
+  /* Pointer untuk hover */
+  z-index: 10;
+  /* Prioritaskan tombol di atas elemen lain */
+  border-radius: 50%;
+  /* Membuat lingkaran */
+  display: flex;
+  /* Gunakan Flexbox untuk centering */
+  align-items: center;
+  /* Posisikan teks secara vertikal */
+  justify-content: center;
+  /* Posisikan teks secara horizontal */
+  font-size: 18px;
+  /* Ukuran teks untuk lebih jelas */
+}
+
+.carousel-btn.prev {
+  left: 10px;
+  /* Jarak dari sisi kiri */
+}
+
+.carousel-btn.next {
+  right: 10px;
+  /* Jarak dari sisi kanan */
+}
+
+
+.carousel-container {
+  height: auto;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 50px;
+  /* Tambahkan padding untuk memberi ruang pada tombol */
+
+  padding-bottom: 20px;
+  /* Ruang ekstra di bawah */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: 2px solid #ccc;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: #4f4f33;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: -25px;
+  /* Geser tombol kiri ke luar */
+}
+
+.carousel-btn.next {
+  right: -25px;
+  /* Geser tombol kanan ke luar */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+  width: calc(100% * 3);
+  padding-left: 27px;
+  padding-right: 60px;
+}
+
+.carousel-track img {
+  width: calc(25% - 20px);
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.carousel-btn:hover {
+  background: #4f4f33;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+
+}
+
+.carousel-btn.prev {
+  left: 15px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-btn.next {
+  right: 15px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommendations h2 {
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 2s ease;
+  gap: 20px;
+  width: calc(100% * 3);
+}
+
+.carousel-track img {
+  width: calc(25% - 20px);
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.features ul li {
+  margin-bottom: 10px;
+}
+
+.thumbnail-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.thumbnail-images img {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, opacity 0.8s ease;
+}
+
+.thumbnail-images img:hover {
+  border-color: #4f4f33;
+}
+
+.thumbnail-images {
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+/* Scrollable */
+.product-container {
+  overflow: auto;
+}
+
+/* Footer */
+.footer {
+  background: #000; /* Warna latar belakang hitam */
+  color: #fff; /* Warna teks putih */
+  padding: 40px 20px; /* Menambah padding atas dan bawah */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: space-between; /* Mengatur jarak antara elemen */
+  align-items: flex-start; /* Menjaga elemen tetap di atas */
+  flex-wrap: wrap; /* Membuat footer responsif */
+  font-family: Arial, sans-serif; /* Font yang digunakan */
+  margin: 0;
+  margin-top: 100px;
+}
+
+.footer-logo {
+  width: 150px; /* Ukuran logo */
+  margin: 0 200px;
+  margin-right: 300px; /* Memberikan jarak ke kanan dan kiri */
+}
+
+.footer-logo img {
+  width: 100%; /* Mengisi kontainer */
+  height: auto; /* Menjaga rasio aspek */
+}
+
+.footer .offers {
+  flex: 2; /* Membuat bagian tawaran fleksibel */
+  margin: 0 20px;
+  margin-top: 0; /* Menambahkan margin horizontal */
+}
+
+.footer .offers h3 {
+  margin: 0 0 10px; /* Menghapus margin atas, menambah margin bawah */
+  font-size: 20px; /* Ukuran font yang lebih besar */
+  font-weight: bold; /* Ketebalan font */
+  text-transform: uppercase; /* Huruf kapital */
+}
+
+.footer .email-input {
+  width: 100%; /* Lebar penuh */
+  max-width: 400px; /* Lebar maksimum */
+  padding: 10px; /* Menambah padding */
+  margin: 10px 0; /* Menambah margin vertikal */
+  border: 3px solid #fff; /* Border putih */
+  background: transparent; /* Latar belakang transparan */
+  color: #fff; /* Warna teks putih */
+  border-radius: 5px; /* Menambahkan border radius */
+}
+
+.footer .subtext {
+  font-size: 20px; /* Ukuran font kecil */
+  opacity: 0.8; /* Sedikit transparan */
+}
+
+.footer .social-links {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: column; /* Menyusun secara vertikal */
+  align-items: flex-start; /* Rata kiri untuk elemen */
+  flex: 1; /* Membuat bagian sosial media fleksibel */
+  margin: 0 20px; /* Memberikan margin horizontal */
+  margin-top: 10px; /* Atur jarak atas untuk mendekatkan ke bagian atas */
+}
+
+.footer .return-policy {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: column; /* Menyusun secara vertikal */
+  align-items: flex-start; /* Rata kiri untuk elemen */
+  flex: 1; /* Membuat bagian kebijakan fleksibel */
+  margin: 0 20px; /* Memberikan margin horizontal */
+  margin-top: 5px; /* Atur jarak atas untuk mendekatkan ke bagian atas */
+}
+
+.footer .social-links,
+.footer .return-policy {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: column; /* Menyusun secara vertikal */
+  align-items: flex-start; /* Rata kiri untuk elemen */
+  flex: 1; /* Membuat bagian fleksibel */
+  margin: 0 20px; /* Memberikan margin horizontal */
+}
+
+.footer .social-links h3,
+.footer .return-policy h3 {
+  margin: 0 0 5px; /* Mengurangi margin bawah untuk mendekatkan elemen */
+  font-size: 16px; /* Ukuran font untuk judul */
+  text-transform: uppercase; /* Huruf kapital */
+}
+
+.footer .social-links a,
+.footer .return-policy a {
+  color: #fff; /* Warna teks putih */
+  text-decoration: none; /* Menghapus garis bawah */
+  font-size: 14px; /* Ukuran font yang sama */
+  padding: 5px; /* Menambahkan padding untuk jarak antar link */
+  margin: 2px 0; /* Menambahkan margin vertikal untuk jarak antar link */
+}
+
+.footer .social-media-items {
+  display: flex; /* Menggunakan flexbox untuk menyusun link */
+  flex-direction: column; /* Menyusun secara vertikal */
+}
+
+.footer .social-media-items a {
+  color: #fff; /* Warna teks putih */
+  text-decoration: none; /* Menghapus garis bawah */
+  font-size: 14px; /* Ukuran font */
+  padding: 5px; /* Menambahkan padding untuk jarak antar link */
+}
+
+.footer .return-policy {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: column; /* Menyusun secara vertikal */
+  align-items: flex-start; /* Rata kiri untuk elemen */
+  flex: 1;
+  margin-top: -6px;
+  margin-left: -100px; /* Membuat bagian kebijakan fleksibel */ /* Memberikan margin horizontal */
+}
+
+.footer .return-policy a {
+  color: #fff; /* Warna teks putih */
+  text-decoration: none; /* Menghapus garis bawah */
+  font-size: 15px; /* Ukuran font */
+  text-transform: uppercase; /* Huruf kapital */
+  font-weight: bold;
+}
+
+/* Impor font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+}
+
+/* Announcement */
+.announcement-bar {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* Navbar */
+.nav {
+    background: #f4ede6;
+    border-bottom: 2px solid black;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-right a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    width: 150px;
+}
+
+.footer .offers {
+    flex: 2;
+    margin: 0 20px;
+}
+
+.footer .offers h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer .email-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    background: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.footer .social-links, .footer .return-policy {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer .social-links a, .footer .return-policy a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Cart Page */
+/* Cart Popup Container */
+.cart-popup {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 400px;
+  max-width: 90%;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-popup.active {
+  right: 0;
+}
+
+/* Header Styles */
+.cart-popup-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-popup-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.cart-popup-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Content Styles */
+.cart-popup-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Cart Item Styles */
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.cart-item-price {
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.quantity-controls span {
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Subtotal Section */
+.cart-subtotal {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+  margin-top: 450px;
+}
+
+.cart-subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Buttons */
+.cart-popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.checkout, .view-cart {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+
+.checkout {
+  background: #4f4f33;
+  color: white;
+}
+
+.view-cart {
+  background: white;
+  border: 1px solid #4A4A4A;
+  color: #4A4A4A;
+}
+
+/* Secure Checkout Text */
+.secure-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.secure-checkout i {
+  font-size: 1.1rem;
+}
+

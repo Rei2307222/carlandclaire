@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl & Claire</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/pertanyaanstyle.css">
+    <link rel="icon" href="/media/1.png"> 
+</head>
+
+<body>
+    <header>
+      <div class="announcement-bar">
+        FREE SHIPPING ON ORDER OVER RP. 450,000
+    </div>
+    <nav class="nav">
+      <div class="nav-container">
+          <div class="logo">
+              <img src="/media/2.png" alt="Carl & Claire Logo">
+          </div>
+          
+          <ul class="nav-menu">
+              <li><a href="discover.html">Discover</a></li>
+              <li class="dropdown">
+                  <button class="dropdown-btn">
+                      Shop
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                  </button>
+                  <div class="dropdown-menu">
+                      <a href="ShopAll.html">Shop All</a>
+                      <a href="perfume.html">Perfume</a>
+                      <a href="discoverySet.html">Discovery Set</a>
+                  </div>
+              </li>
+              <li><a href="ourstory.html">Our Story</a></li>
+              <li><a href="stockist.html">Stockist</a></li>
+          </ul>
+    
+          <div class="nav-right">
+              <div class="search-container">
+                  <input type="text" class="search-input" placeholder="SEARCH">
+                  <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  </svg>
+              </div>
+              <div class="search-container">
+                  <a href="cart.html" class="cart-link">
+                      <i class="fas fa-shopping-cart"></i>
+                  </a>
+              </div>
+              <div class="search-container">
+              <a href="#" class="profile-link">
+                  <i class="fas fa-user-alt"></i>
+              </a>
+              </div>
+          </div>
+      </div>
+    </nav>
+    </header>
+
+    <main>
+        <div class="question-container">
+            <h1 class="question">How do you want others to remember you?</h1>
+            <div class="option">
+                <p>As someone calm and wise.</p>
+            </div>
+            <div class="option">
+                <p>As an energetic and friendly person.</p>
+            </div>
+            <div class="option">
+                <p>As someone charismatic and confident.</p>
+            </div>
+            <div class="option">
+                <p>As someone warm and caring.</p>
+            </div> 
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="/media/1.png" alt="CARL & CLAIRE">
+        </div>
+        
+        <div class="offers">
+            <h3>Enjoy Carl & Claire Exclusive Offers</h3>
+            <input type="email" class="email-input" placeholder="EMAIL">
+            <p class="subtext">Stay up-to-date with our latest news, updates and promotions</p>
+        </div>
+        
+        <div class="social-links">
+            <h3>Social Media</h3>
+            <div class="social-media-items">
+                <a href="#">Instagram</a>
+                <a href="#">Tiktok</a>
+                <a href="#">Youtube</a>
+            </div>
+        </div>
+        
+        <div class="return-policy">
+            <a href="#">Return Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navigasi antar halaman
+            const navLinks = document.querySelectorAll('.navbar .nav-menu a:not(.search-wrapper)');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navigasi antar halaman untuk opsi
+            const options = document.querySelectorAll('.option');
+            const links = [
+                'pertanyaan5.html',
+                'pertanyaan5.html',
+                'pertanyaan5.html',
+                'pertanyaan5.html',
+            ];
+
+            options.forEach((option, index) => {
+                option.addEventListener('click', () => {
+                    window.location.href = links[index];
+                });
+            });
+
+            // Navigasi antar halaman untuk menu navbar
+            const navLinks = document.querySelectorAll('.navbar .nav-menu a:not(.search-wrapper)');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
